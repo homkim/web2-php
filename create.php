@@ -16,30 +16,22 @@
         $i = 2;
         while ($i < count($arr)) {
             if (!($arr[$i] == '.' || $arr[$i] == '..' || strtoupper($arr[$i]) == 'WEB')) {
-            echo '<li><a href="index.php?id='.$arr[$i].'"> '.$arr[$i].'</a></li>';
+                echo '<li><a href="index.php?id=' . $arr[$i] . '"> ' . $arr[$i] . '</a></li>';
             }
             $i++;
         }
         ?>
     </ol>
+
     <a href="create.php">create</a>
-    <h2>
-        <?php
-        if (isset($_GET['id'])) {
-            echo $_GET['id'];
-        } else {
-            echo 'Welcome, PHP';
-        }
-        ?>
-    </h2>
-    <?php
-    if (isset($_GET['id'])) {
-        echo file_get_contents('./data/' . $_GET['id'], true);
-    } else {
-        //echo 'Hello, PHP';
-        echo file_get_contents('./data/web', true);
-    }
-    ?>
+    <form action="create_process.php" method="post">
+        <p><input type="text" name="title" id="title" placeholder="Title"></p>
+        <p><textarea name="desc" id="desc" placeholder="Desctiption"></textarea></p>
+        <p><input type="submit"></p>
+    </form>
+
+
+
 </body>
 
 </html>
