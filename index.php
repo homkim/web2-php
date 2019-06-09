@@ -15,8 +15,8 @@
 
         $i = 2;
         while ($i < count($arr)) {
-            if (!($arr[$i] == '.' || $arr[$i] == '..' || $arr[$i] == 'web')) {
-            echo '<li><a href="index.php?id='.$arr[$i].'"> '.strtoupper($arr[$i]).'</a></li>';
+            if (!($arr[$i] == '.' || $arr[$i] == '..' || strtoupper($arr[$i]) == 'WEB')) {
+            echo '<li><a href="index.php?id='.$arr[$i].'"> '.$arr[$i].'</a></li>';
             }
             $i++;
         }
@@ -25,7 +25,7 @@
     <h2>
         <?php
         if (isset($_GET['id'])) {
-            echo strtoupper($_GET['id']);
+            echo $_GET['id'];
         } else {
             echo 'Welcome, PHP';
         }
