@@ -1,3 +1,4 @@
+<?php require('lib/print.php'); ?>
 <!DOCTYPE html>
 <html>
 
@@ -9,18 +10,7 @@
 <body>
     <h1> <a href="index.php">WEB</a></h1>
     <ol>
-        <?php
-        // $arr = ['HTML', 'CSS', 'JavaScript'];
-        $arr = scandir('data');
-
-        $i = 2;
-        while ($i < count($arr)) {
-            if (!($arr[$i] == '.' || $arr[$i] == '..' || strtoupper($arr[$i]) == 'WEB')) {
-                echo '<li><a href="index.php?id=' . $arr[$i] . '"> ' . $arr[$i] . '</a></li>';
-            }
-            $i++;
-        }
-        ?>
+        <?php print_list();?>
     </ol>
 
     <a href="create.php">create</a>
