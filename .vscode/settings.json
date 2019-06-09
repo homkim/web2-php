@@ -1,0 +1,8 @@
+{
+    "liveServer.settings.multiRootWorkspaceName": "htdocs",
+    "liveServer.settings.proxy": {
+        "enable": true,
+        "baseUri": "/", 
+        "proxyUri": "http://localhost:80/" 
+    }
+}
